@@ -9,8 +9,7 @@
 #The function creates a special "matrix" object that can cache its inverse.
 
 makeCacheMatrix<-function(x=matrix()){
-  ## Return a matrix that is the inverse of 'x'
-  xinv<-NULL
+   xinv<-NULL
   set<-function(y){
     x<<-y
     xinv<<-NULL
@@ -28,6 +27,7 @@ makeCacheMatrix<-function(x=matrix()){
 ## been changed, then the cachSolve should get the inverse from the cache.
 
 cacheSolve<-function(x,...){
+  ## Return a matrix that is the inverse of 'x'
   z<-x$getxinv()
   if(!is.null(z)){
     message("getting cached data")
