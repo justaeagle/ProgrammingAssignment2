@@ -31,8 +31,8 @@ cacheSolve<-function(x,...){
   ## Return a matrix that is the inverse of 'x'
   xinv<-x$getxinv()                #asks for cache of x matrix
   if(!is.null(xinv)){              #if a cache exists the inverse of the matrix was calculated
-    message("getting cached data") # and message appears
-    return(xinv)                   #cache is returned
+    message("getting cached data") #shows the message
+    return(xinv)                   #returns the cache
   }
   data<-x$get()                    # if not, the matrix object is got 
   xinv<-solve(data,...)            #computes the inverse of the matrix
