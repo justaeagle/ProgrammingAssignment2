@@ -7,7 +7,8 @@
 ## a special object which stores a matrix and caches the inverse of it. 
 
 
-#The makeCacheMatrix function creates a special "matrix" object that can cache its inverse.
+##The makeCacheMatrix function creates a special "matrix" object 
+##that can cache the inverse of the matrix.
 
 makeCacheMatrix<-function(x=matrix()){
  xinv<-NULL 
