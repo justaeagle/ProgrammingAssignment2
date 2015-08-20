@@ -14,11 +14,11 @@ makeCacheMatrix<-function(x=matrix()){
  xinv<-NULL 
  set<-function(y){
     x<<-y
-    xinv<<-NULL #stores the inverse of matrix in cache 
+    xinv<<-NULL   #stores the inverse of matrix in cache 
  }
- get<-function()x #gets a matrix
- setxinv<-function(solve)xinv<<-solve #sets the inverse of matrix 
- getxinv<-function()xinv #gets the inverse of a matrix
+ get<-function()x                                        #gets a matrix
+ setxinv<-function(solve)xinv<<-solve                    #sets the inverse of matrix 
+ getxinv<-function()xinv                                 #gets the inverse of a matrix
  list(set=set, get=get, setxinv=setxinv,getxinv=getxinv) #creates a list of functions
  }
 
@@ -29,15 +29,15 @@ makeCacheMatrix<-function(x=matrix()){
 
 cacheSolve<-function(x,...){
   ## Return a matrix that is the inverse of 'x'
-  xinv<-x$getxinv() #asks for cache of x matrix
-  if(!is.null(xinv)){ #if a cache exists the inverse of the matrix was calculated
+  xinv<-x$getxinv()                #asks for cache of x matrix
+  if(!is.null(xinv)){              #if a cache exists the inverse of the matrix was calculated
     message("getting cached data") # and message appears
-    return(xinv) #cache returns
+    return(xinv)                   #cache is returned
   }
-  data<-x$get() # if not, the matrix object is got 
-  xinv<-solve(data,...) #computes the inverse of the matrix
-  x$setxinv(xinv) # the inverse is set to the object
-  xinv #returns the solved result
+  data<-x$get()                    # if not, the matrix object is got 
+  xinv<-solve(data,...)            #computes the inverse of the matrix
+  x$setxinv(xinv)                  # the inverse is set to the object
+  xinv                             #returns the solved result
 }
 
 
